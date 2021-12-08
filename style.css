@@ -1,9 +1,109 @@
+body > header {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap; /* flex vs flex-flow! */
+  justify-content: space-between; /* <-- Use this if not using margin-left:auto */
+  padding: 20px;
+  background: black;
+  color: white;
+}
+
+body > header > h1 {
+  background-image: url("assets/acme-logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-top: 40px;
+  height: 0;
+  overflow: hidden;
+}
+
+body > header > label {
+  margin-left: auto; /* <-- use this if not using justify-content:space-between */
+}
+
+nav {
+  width: 100%;
+  flex-shrink: 0;
+  max-height: 0;
+  overflow: hidden;
+
+  transition: max-height 500ms ease-out 0s;
+}
+
+#menu-toggle:checked + nav {
+  max-height: 300px;
+
+  transition: max-height 500ms ease-in 0s;
+}
+
+nav a {
+  color: white;
+
+  display: block;
+  padding: 15px;
+  font-size: 1.5em;
+  text-align: center;
+
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
 i {
   display: inline-block;
   width: 30px;
 }
 
 i line {
-  stroke: black;
+  stroke: white;
   stroke-width: 3;
+}
+
+.center {
+  position: relative;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background-color: aquamarine;
+  height: 500px;
+}
+
+.center img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+}
+
+article > header {
+  padding: 20px;
+}
+
+.article-banner {
+  display: flex;
+  /* grid-template-columns: repeat(2, 1fr); */
+  /* gap: 20px; */
+}
+
+article > header h1 {
+  /* flex-shrink: 0; */
+  margin-bottom: 15px;
+}
+
+article > header figure {
+  width: 50%;
+}
+
+article > header figcaption {
+  font-size: 0.75em;
+}
+
+article > header p {
+  padding-left: 20px;
+  width: 50%;
+  font-size: 1.25em;
 }
